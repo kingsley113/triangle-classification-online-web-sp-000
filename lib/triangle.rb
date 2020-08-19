@@ -15,6 +15,10 @@ class Triangle
 
   end
 
+  def all_equal?(array)
+    array.uniq.count == 1
+  end
+
 
   def kind
     # verify triangle is valid
@@ -33,7 +37,4 @@ class Triangle
     end
   end
 
-  def all_equal?(array)
-    array.uniq.count == 1
-  end
 end
