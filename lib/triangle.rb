@@ -12,7 +12,7 @@ class Triangle
   end
 
 
-  def self.kind
+  def kind
     # verify triangle is valid
     if((@sideA + @sideB) <= @sideC || @sideA <= 0 || @sideB <= 0 || @sideC <= 0)
       raise TriangleError
