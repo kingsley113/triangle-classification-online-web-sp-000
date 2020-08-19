@@ -2,9 +2,13 @@ class Triangle
   attr_accessor :sideA, :sideB, :sideC
 
   def initialize(sideA, sideB, sideC)
+    triangle = []
     @sideA = sideA
     @sideB = sideB
     @sideC = sideC
+    triangle << @sideA
+    triangle << @sideB
+    triangle << @sideC
   end
 
   class TriangleError < StandardError
