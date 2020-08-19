@@ -27,7 +27,7 @@ class Triangle
         raise TriangleError
     end
 
-    if(@triangle.all_equal?)
+    if(all_equal?(@triangle))
     # if( @sideA == @sideB && @sideB == @sideC)
       :equilateral
     elsif (@sideA == @sideB && @sideB != @sideC || @sideA != @sideB && @sideB == @sideC || @sideA == @sideC && @sideC != @sideB)
