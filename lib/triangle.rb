@@ -19,7 +19,7 @@ class Triangle
   def kind
     # verify triangle is valid
     @triangle.sort!
-    if(@triangle[0] + @triange[1] <= @triange[2] || @triangle.any?{|n| n <= 0})
+    if(@triangle[0] + @triangle[1] <= @triangle[2] || @triangle.any?{|n| n <= 0})
     # if((@sideA + @sideB) <= @sideC || (@sideA + @sideC) <= @sideB || (@sideB + @sideC) <= @sideA || @sideA <= 0 || @sideB <= 0 || @sideC <= 0)
       raise TriangleError
     end
