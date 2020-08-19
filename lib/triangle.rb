@@ -19,6 +19,10 @@ class Triangle
     array.uniq.count == 1
   end
 
+  def two_equal?(array)
+    array.uniq.count == 2
+  end
+
   def none_equal?(array)
     array.uniq.count == 3
   end
@@ -32,7 +36,9 @@ class Triangle
 
     if(all_equal?(@triangle))
       :equilateral
-    elsif (@sideA == @sideB && @sideB != @sideC || @sideA != @sideB && @sideB == @sideC || @sideA == @sideC && @sideC != @sideB)
+    elsif (two_equal?(@triangle))      
+    # elsif (@triangle[0] == @triangle[1] && @triangle[0] != @triangle[3] || @triangle[1] == @triangle[2] != @triangle[0])      
+    # elsif (@sideA == @sideB && @sideB != @sideC || @sideA != @sideB && @sideB == @sideC || @sideA == @sideC && @sideC != @sideB)
       :isosceles
     elsif (none_equal?(@triangle))
     # elsif (@sideA != @sideB && @sideB != @sideC && @sideA != @sideC)
