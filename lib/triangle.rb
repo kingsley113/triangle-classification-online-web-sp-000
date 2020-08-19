@@ -19,6 +19,9 @@ class Triangle
     array.uniq.count == 1
   end
 
+  def none_equal?(array)
+    array.uniq.count == 3
+  end
 
   def kind
     # verify triangle is valid
@@ -28,11 +31,11 @@ class Triangle
     end
 
     if(all_equal?(@triangle))
-    # if( @sideA == @sideB && @sideB == @sideC)
       :equilateral
     elsif (@sideA == @sideB && @sideB != @sideC || @sideA != @sideB && @sideB == @sideC || @sideA == @sideC && @sideC != @sideB)
       :isosceles
-    elsif (@sideA != @sideB && @sideB != @sideC && @sideA != @sideC)
+    elsif (none_equal(@triangle))      
+    # elsif (@sideA != @sideB && @sideB != @sideC && @sideA != @sideC)
       :scalene
     end
   end
