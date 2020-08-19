@@ -15,6 +15,24 @@ class Triangle
 
   end
 
+
+  def kind
+    # verify triangle is valid
+    @triangle.sort!
+    if(@triangle[0] + @triangle[1] <= @triangle[2] || @triangle.any?{|n| n <= 0})
+        raise TriangleError
+    end
+    # test for triangle types
+    if(all_equal?(@triangle))
+      :equilateral
+    elsif (two_equal?(@triangle))
+      :isosceles
+    elsif (none_equal?(@triangle))
+      :scalene
+    end
+  end
+
+  # define triangle tests
   def all_equal?(array)
     array.uniq.count == 1
   end
@@ -25,25 +43,6 @@ class Triangle
 
   def none_equal?(array)
     array.uniq.count == 3
-  end
-
-  def kind
-    # verify triangle is valid
-    @triangle.sort!
-    if(@triangle[0] + @triangle[1] <= @triangle[2] || @triangle.any?{|n| n <= 0})
-        raise TriangleError
-    end
-
-    if(all_equal?(@triangle))
-      :equilateral
-    elsif (two_equal?(@triangle))
-    # elsif (@triangle[0] == @triangle[1] && @triangle[0] != @triangle[3] || @triangle[1] == @triangle[2] != @triangle[0])
-    # elsif (@sideA == @sideB && @sideB != @sideC || @sideA != @sideB && @sideB == @sideC || @sideA == @sideC && @sideC != @sideB)
-      :isosceles
-    elsif (none_equal?(@triangle))
-    # elsif (@sideA != @sideB && @sideB != @sideC && @sideA != @sideC)
-      :scalene
-    end
   end
 
 end
