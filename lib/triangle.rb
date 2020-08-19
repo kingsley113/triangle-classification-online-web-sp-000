@@ -18,7 +18,7 @@ class Triangle
       raise TriangleError
     end
 
-    if( @sideA == @sideB == @sideC)
+    if( @sideA == @sideB && @sideB == @sideC)
       :equilateral
     elsif (@sideA == @sideB != @sideC)
       :isosceles
