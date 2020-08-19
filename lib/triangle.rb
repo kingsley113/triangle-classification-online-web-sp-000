@@ -34,7 +34,7 @@ class Triangle
       :equilateral
     elsif (@sideA == @sideB && @sideB != @sideC || @sideA != @sideB && @sideB == @sideC || @sideA == @sideC && @sideC != @sideB)
       :isosceles
-    elsif (none_equal(@triangle))
+    elsif (none_equal?(@triangle))
     # elsif (@sideA != @sideB && @sideB != @sideC && @sideA != @sideC)
       :scalene
     end
