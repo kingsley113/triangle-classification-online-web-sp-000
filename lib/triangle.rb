@@ -34,6 +34,6 @@ class Triangle
   end
 
   def all_equal?(array)
-    array.uniq.size == 1
+    array.uniq.count == 1
   end
 end
